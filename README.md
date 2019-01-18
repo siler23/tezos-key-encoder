@@ -8,14 +8,15 @@ Encode public and secret keys from PEM => Cryptocurrency specific formats to der
 **Usage:**
 
 ```shell
-# Test 
-go test ./...
 # Encode Keys
 go run encode.go keys/secp256k1.pem
 > Curve:  Secp256k1: 1.3.132.0.10
 > Secret Key:  spsk2rBBj5a6ahir2xZwbNkdeBuyZTxQZC9Pr6UvSAM4GNPeXfM3ix
 > Public Key:  sppk7c9QAGWCJEvFWp6vGBs3VuxFax7GDwWQiPXR2rGSYPN7NMQN9rP
 > Public Key Hash:  tz2PH72CdqfsBJRsDcGfUu3UvuXwEyzqzs3s
+
+# Test 
+go test ./...
 ```
 
 **Helpful OpenSSL Commands:**
