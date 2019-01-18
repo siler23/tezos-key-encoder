@@ -1,0 +1,36 @@
+image: golang:1.11-alpine
+
+variables:
+  REPO_NAME: gitlab.com/polychain/key-encoder
+
+before_script:
+  - apk update
+  - apk add git
+  - mkdir -p $GOPATH/src/$(dirname $REPO_NAME)
+  - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
+  - cd $GOPATH/src/$REPO_NAME
+  - go get -d -v ./...
+
+stages:
+    - test
+    - build
+
+coverage:
+  stage: test
+  script:
+    - go test -cover $(go list ./... | grep -v /vendor/)
+
+test:
+    stage: test
+    script:
+      - go fmt $(go list ./... | grep -v /vendor/)
+      - go vet $(go list ./... | grep -v /vendor/)
+      - go test $(go list ./... | grep -v /vendor/)
+
+compile:
+    stage: build
+    script:
+      - CGO_ENABLED=0 GOOS=linux go build -o $CI_PROJECT_DIR/key-encoder
+    artifacts:
+      paths:
+        - key-encoder
