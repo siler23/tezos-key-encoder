@@ -5,18 +5,28 @@ Key Encoder
 
 Encode public and secret keys from PEM => Cryptocurrency specific formats to derive usable cryptocurrency keys from an HSM or other secure environment.  Currently only supports Tezos key derivation.
 
-**Usage:**
+**Usage**
 
 ```shell
+# Install 
+go install gitlab.com/polychain/key-encoder
+
 # Encode Keys
-go run encode.go keys/secp256k1.pem
+key-encoder keys/secp256k1.pem
 > Curve:  Secp256k1: 1.3.132.0.10
 > Tezos Secret Key:  spsk2rBBj5a6ahir2xZwbNkdeBuyZTxQZC9Pr6UvSAM4GNPeXfM3ix
 > Tezos Public Key:  sppk7c9QAGWCJEvFWp6vGBs3VuxFax7GDwWQiPXR2rGSYPN7NMQN9rP
 > Tezos Public Key Hash:  tz2PH72CdqfsBJRsDcGfUu3UvuXwEyzqzs3s
+```
 
+**Develop**
+
+```shell
 # Test 
 go test ./...
+
+# Run locally
+go run encode.go keys/secp256k1.pem
 ```
 
 **Helpful OpenSSL Commands:**
