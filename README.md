@@ -1,7 +1,7 @@
 Key Encoder
 ===========
 
-![pipeline status](https://gitlab.com/polychain/key-encoder/badges/master/pipeline.svg) ![coverage](https://gitlab.com/polychain/key-encoder/badges/master/coverage.svg)
+![pipeline status](https://gitlab.com/polychainlabs/key-encoder/badges/master/pipeline.svg) ![coverage](https://gitlab.com/polychainlabs/key-encoder/badges/master/coverage.svg)
 
 Encode public and secret keys from PEM => Cryptocurrency specific formats to derive usable cryptocurrency keys from an HSM or other secure environment.  Currently only supports Tezos key derivation.
 
@@ -9,7 +9,7 @@ Encode public and secret keys from PEM => Cryptocurrency specific formats to der
 
 ```shell
 # Install 
-go install gitlab.com/polychain/key-encoder
+go install gitlab.com/polychainlabs/key-encoder
 
 # Encode Keys
 key-encoder keys/secp256k1.pem
