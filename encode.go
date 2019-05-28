@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"gitlab.com/polychain/key-encoder/encoder"
+	"gitlab.com/polychainlabs/key-encoder/encoder"
 )
 
 func fileExists(path string) bool {
