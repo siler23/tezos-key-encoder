@@ -5,8 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
-
-	"gitlab.com/polychainlabs/key-encoder/encoder"
+	"github.com/siler23/tezos-key-encoder/encoder"
 )
 
 func fileExists(path string) bool {

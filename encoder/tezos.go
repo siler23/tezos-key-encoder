@@ -8,7 +8,7 @@ import (
 
 	"golang.org/x/crypto/blake2b"
 
-	"github.com/btcsuite/btcutil/btcd/base58"
+	"github.com/btcsuite/btcd/btcutil/base58"
 )
 
 // TezosKeys contains keys formatted specific to tezos reference binaries
